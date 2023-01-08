@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnterToBuilding : MonoBehaviour
 {
@@ -11,19 +10,25 @@ public class EnterToBuilding : MonoBehaviour
         tipCanvas.SetActive(false);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("EnterableBuilding"))
+        if (collision.TryGetComponent(out EnterableBuilding building))
         {
             tipCanvas.SetActive(true);
+            if(Input.GetKey(KeyCode.E)) 
+            {
+                Debug.Log("Ты лох");
+                building.EnterToBuilding();
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("EnterableBuilding"))
+        if (collision.TryGetComponent(out EnterableBuilding building))
         {
             tipCanvas.SetActive(false);
         }
     }
+    
 }
