@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Prototype.unity
     guid: 76c90c9fae15f05479fe6e834c58b619
+  - enabled: 1
+    path: Assets/Scenes/Electro.unity
+    guid: 521e2df9033309c448d2e9348bf3e528
   m_configObjects: {}
