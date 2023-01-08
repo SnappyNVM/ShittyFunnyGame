@@ -8,12 +8,12 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 change;
     private bool isFacingRight = true;
 
-    void Start()
+    private void Start()
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    private void Update()
     {
         ChangeSetup();
         if (change != Vector3.zero)
@@ -24,14 +24,13 @@ public class PlayerMovement : MonoBehaviour
         else player.SetFloat("Speed", 0);
     }
 
-    void ChangeSetup()
+    private void ChangeSetup()
     {
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
     }
-
-    void MoveCharacter()
+    private void MoveCharacter()
     {
         playerRigidbody.MovePosition(transform.position + change.normalized * speed * Time.fixedDeltaTime);
         FlipCheck();

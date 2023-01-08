@@ -1,6 +1,5 @@
 using UnityEngine;
 
-
 public class EnterToBuilding : MonoBehaviour
 {
     [SerializeField] private GameObject tipCanvas;
@@ -29,6 +28,5 @@ public class EnterToBuilding : MonoBehaviour
         {
             tipCanvas.SetActive(false);
         }
-    }
-    
+    }  
 }
